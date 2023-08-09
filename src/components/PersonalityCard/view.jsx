@@ -3,6 +3,7 @@ import { Spinner } from 'components/shared';
 import Avatar from './components/Avatar';
 import UserInfo from './components/UserInfo';
 import Description from './components/Description';
+import Details from './components/Details';
 
 const PersonalityCardView = ({isLoading}) => (<div className="relative max-w-3xl rounded-[50px] bg-white flex-1 mx-auto">
   {isLoading
@@ -15,6 +16,7 @@ const PersonalityCardView = ({isLoading}) => (<div className="relative max-w-3xl
         <UserInfo />
       </div>
       <Description />
+      <Details />
     </div>
   }
 </div>);
