@@ -1,0 +1,3 @@
+export const FETCH_USER = 'api/FETCH_USER';
+export const FETCH_USER_BRANDS = 'api/FETCH_USER_BRANDS';
+export const FETCH_USER_DESCRIPTION = 'api/FETCH_USER_DESCRIPTION';
