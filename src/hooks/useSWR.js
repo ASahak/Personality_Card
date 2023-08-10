@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import useSWRProvider, { mutate as mutateSWR } from 'swr';
 
 const fetcher = async (url, rest) => {
