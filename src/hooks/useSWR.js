@@ -12,6 +12,11 @@ const useSWR = ({ url, key, fetcherOpts, opts = {} }) => {
     () => {
       SWR.handleAbort(_key);
       const signal = SWR.getSignal(_key);
+      if(fetcherOpts?.hasOwnProperty('params')) {
+        url = url + '?' + new URLSearchParams({
+          ...fetcherOpts.params
+        })
+      }
       return fetcher(url, { ...fetcherOpts, signal });
     },
     opts
@@ -28,24 +33,6 @@ const useSWR = ({ url, key, fetcherOpts, opts = {} }) => {
   };
 };
 
-export const useSWRCancelUnMount = () => {
-  const subscribers = useRef([]);
-
-  const runTask = ({ key, ...rest }) => {
-    subscribers.current.push(key);
-    return SWR.mutate({ key, ...rest });
-  };
-
-  useEffect(
-    () => () => {
-      subscribers.current.forEach((key) => SWR.cancel(key));
-    },
-    []
-  );
-
-  return runTask;
-};
-
 export const SWR = (() => {
   const _store = {};
 
@@ -59,7 +46,6 @@ export const SWR = (() => {
     },
     getSignal: (key) => _store[key]?.signal,
     cancel: (key) => {
-      console.log(key, _store);
       if (key instanceof Array) {
         key.forEach((k) => {
           if (_store[k]) {

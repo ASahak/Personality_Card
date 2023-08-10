@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const Spinner = ({color, size}) => {
+export const Spinner = ({size}) => {
 
   const h = `h-[${size}px]`;
   const w = `w-[${size}px]`;
@@ -10,11 +10,9 @@ export const Spinner = ({color, size}) => {
 }
 Spinner.displayName = 'Spinner';
 Spinner.defaultProps = {
-  color: 'text-white',
   size: 50,
 }
 Spinner.propTypes = {
-  color: PropTypes.string,
   size: PropTypes.number,
 }
 export default Spinner;

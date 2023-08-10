@@ -6,24 +6,3 @@ export const fetchUserData = (payload) => {
     payload,
   }
 }
-
-export const toggleAppLoading = (payload) => {
-  return {
-    type: Types.TOGGLE_APP_LOADING,
-    payload,
-  }
-}
-
-export const setUser = (payload) => {
-  return {
-    type: Types.SET_USER,
-    payload,
-  }
-}
-
-export const setBrands = (payload) => {
-  return {
-    type: Types.SET_BRANDS,
-    payload,
-  }
-}

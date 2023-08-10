@@ -1,1 +1,1 @@
-export { default as useSWR, SWR, useSWRCancelUnMount } from './useSWR';
+export { default as useSWR, SWR } from './useSWR';
