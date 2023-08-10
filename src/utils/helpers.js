@@ -1,9 +1,9 @@
 export const convertDate = (date) => {
   const _date = new Date(date);
-  if(_date) {
+  if(_date instanceof Date && !isNaN(_date)) {
     const year = _date.getFullYear();
-    const month = _date.getMonth().toString().padStart(2, '0');
-    const day = _date.getDay().toString().padStart(2, '0');
+    const month = (_date.getMonth() + 1).toString().padStart(2, '0');
+    const day = _date.getDate().toString().padStart(2, '0');
     return `${year}/${month}/${day}`
   }
   return ''
