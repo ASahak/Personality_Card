@@ -1,5 +1,7 @@
 export const USER_DESCRIPTION_PARAGRAPHS_COUNT = 1;
 
+export const BRANDS_COUNT = 10;
+
 export const USERS_BASE_URL = 'https://random-data-api.com/api/v2/';
 
 export const FRAMER_VARIANT = {

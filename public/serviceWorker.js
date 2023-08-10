@@ -16,7 +16,9 @@ async function cachedResponse(request) {
 
   // If not in cache, fetch the request from the network and cache it
   const response = await fetch(request);
-  await cache.put(request, response.clone());
+  if('put' in Cache) {
+    await cache.put(request, response.clone());
+  }
 
   return response;
 }

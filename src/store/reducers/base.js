@@ -1,4 +1,4 @@
-import { fromJS, List } from 'immutable';
+import { fromJS } from 'immutable';
 import Types from '../types';
 
 const initialState = fromJS({
@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
     case Types.SET_USER:
       return state.set('user', action.payload);
     case Types.SET_BRANDS:
-      return state.set('brands', List(state.get('brands')).push(action.payload).toJS());
+      return state.set('brands', action.payload);
     case Types.SET_DESCRIPTION:
       return state.set('description', action.payload);
     case Types.SET_ERROR:

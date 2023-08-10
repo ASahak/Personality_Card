@@ -3,7 +3,7 @@ import ReactPlaceholder from 'react-placeholder';
 import 'react-placeholder/lib/reactPlaceholder.css';
 import UnknownUser from 'static/images/unknown-user.png';
 
-const AvatarView = ({ src, onReady, onFailed, isImageReady, isFailed }) => (<div className="rounded-full w-[200px] h-[200px] overflow-hidden">
+const AvatarView = ({ src, onReady, onFailed, isImageReady, isFailed }) => (<div className="rounded-full max-w-[200px] max-h-[200px] w-full h-fit overflow-hidden">
   <ReactPlaceholder
     type="round"
     showLoadingAnimation
@@ -15,7 +15,7 @@ const AvatarView = ({ src, onReady, onFailed, isImageReady, isFailed }) => (<div
   <img
     src={(src || isFailed) || UnknownUser}
     alt="Avatar"
-    className={`bg-primary ${isFailed || isImageReady ? 'block' : 'hide'}`}
+    className={`bg-primary ${isFailed || isImageReady ? 'block' : 'hide'} object-contain`}
     onLoad={onReady}
     onError={onFailed}
   />

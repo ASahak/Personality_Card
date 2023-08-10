@@ -78,6 +78,11 @@ export const SWR = (() => {
       const _key = key || url;
       SWR.handleAbort(_key);
       const signal = SWR.getSignal(_key);
+      if(fetcherOpts?.hasOwnProperty('params')) {
+        url = url + '?' + new URLSearchParams({
+          ...fetcherOpts.params
+        })
+      }
       return mutateSWR(
         key ? { key, url } : url,
         () => fetcher(url, { ...fetcherOpts, signal }),

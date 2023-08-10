@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 const UserInfoView = ({ name, age, gender }) => (<div>
-  <strong className="text-[25px]">{name}</strong>
-  <p className="text-[#909090]">{age} / {gender}</p>
+  <strong className="text-[50px]">{name}</strong>
+  <p className="text-[#909090] text-[35px] leading-[57px]">{age} / {gender}</p>
 </div>);
 
 UserInfoView.displayName = 'UserInfoView';

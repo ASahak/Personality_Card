@@ -24,7 +24,7 @@ const PersonalityCardView = ({isLoading, getUser, error}) => (
             transition={{type: 'linear'}}
             className="max-w-3xl flex flex-1 mx-auto"
           >
-            <div className="p-10">
+            <div className="px-[80px] py-10">
               <div className="sm:flex-row flex-col items-center gap-10 flex">
                 <Avatar/>
                 <UserInfo/>
@@ -32,7 +32,7 @@ const PersonalityCardView = ({isLoading, getUser, error}) => (
               <Description/>
               <Details/>
               <Brands/>
-              <button className="py-3 px-6 bg-primary text-white mt-3 rounded-md block mx-auto" onClick={getUser}>Random
+              <button className="py-3 px-6 bg-primary text-white mt-10 rounded-md block mx-auto text-[30px] leading-[36px]" onClick={getUser}>Random
                 Student
               </button>
             </div>
