@@ -8,7 +8,8 @@ module.exports = {
       bodyBg: '#FAFAFA',
       primary: '#FFA789',
       white: '#fff',
-      gray: '#505050'
+      gray: '#505050',
+      red: 'rgb(239 68 68)',
     },
     extend: {},
   },

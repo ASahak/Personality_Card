@@ -1,17 +1,18 @@
 import { useEffect, useRef } from 'react';
-import axios from 'axios';
 import useSWRProvider, { mutate as mutateSWR } from 'swr';
-import HttpClient from 'utils/http';
 
-const fetcher = (args, HttpInstance = HttpClient) => HttpInstance(args);
-const useSWR = ({ url, key, fetcherOpts, opts = {}, HttpInstance }) => {
+const fetcher = async (url, rest) => {
+  const res = await fetch(url, rest);
+  return res.json()
+}
+const useSWR = ({ url, key, fetcherOpts, opts = {} }) => {
   const _key = key || url;
   const { data, error, isValidating, mutate } = useSWRProvider(
     key ? { key, url } : url,
     () => {
       SWR.handleAbort(_key);
       const signal = SWR.getSignal(_key);
-      return fetcher({ ...fetcherOpts, url, signal }, HttpInstance);
+      return fetcher(url, { ...fetcherOpts, signal });
     },
     opts
   );
@@ -49,7 +50,6 @@ export const SWR = (() => {
   const _store = {};
 
   return {
-    hasCanceled: (err) => axios.isCancel(err),
     handleAbort(key) {
       if (_store[key]) {
         _store[key].abort();
@@ -59,6 +59,7 @@ export const SWR = (() => {
     },
     getSignal: (key) => _store[key]?.signal,
     cancel: (key) => {
+      console.log(key, _store);
       if (key instanceof Array) {
         key.forEach((k) => {
           if (_store[k]) {
@@ -73,13 +74,13 @@ export const SWR = (() => {
         }
       }
     },
-    mutate: ({ url, key, fetcherOpts, opts = {}, HttpInstance }) => {
+    mutate: ({ url, key, fetcherOpts, opts = {} }) => {
       const _key = key || url;
       SWR.handleAbort(_key);
       const signal = SWR.getSignal(_key);
       return mutateSWR(
         key ? { key, url } : url,
-        () => fetcher({ ...fetcherOpts, url, signal }, HttpInstance),
+        () => fetcher(url, { ...fetcherOpts, signal }),
         opts
       );
     },

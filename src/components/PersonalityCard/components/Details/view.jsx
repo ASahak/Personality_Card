@@ -6,27 +6,27 @@ const DetailsView = ({ data: { username, date_of_birth, phone_number, email, sub
   <ul className="mt-6 flex flex-col gap-2">
     <li className="grid grid-cols-[140px_auto]">
       <strong className="text-gray">Username:</strong>
-      <span className="text-gray">{username}</span>
+      <span className="text-gray break-all">{username}</span>
     </li>
     <li className="grid grid-cols-[140px_auto]">
       <strong className="text-gray">Date of Birth:</strong>
-      <span className="text-gray">{convertDate(date_of_birth)}</span>
+      <span className="text-gray break-all">{convertDate(date_of_birth)}</span>
     </li>
     <li className="grid grid-cols-[140px_auto]">
       <strong className="text-gray">Phone:</strong>
-      <span className="text-gray">{phone_number}</span>
+      <span className="text-gray break-all">{phone_number}</span>
     </li>
     <li className="grid grid-cols-[140px_auto]">
       <strong className="text-gray">Email:</strong>
-      <span className="text-gray">{email}</span>
+      <span className="text-gray break-all">{email}</span>
     </li>
     <li className="grid grid-cols-[140px_auto]">
       <strong className="text-gray">Subscription:</strong>
-      <span className="text-gray">{plan}</span>
+      <span className="text-gray break-all">{plan}</span>
     </li>
     <li className="grid grid-cols-[140px_auto]">
       <strong className="text-gray">Location:</strong>
-      <span className="text-gray">{generateAddress(address)}</span>
+      <span className="text-gray break-all">{generateAddress(address)}</span>
     </li>
   </ul>
 </div>);

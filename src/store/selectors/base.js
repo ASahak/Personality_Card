@@ -25,3 +25,8 @@ export const selectUserData = createSelector(
   baseState,
   ({ description, brands, user }) => ({ description, user, brands })
 )
+
+export const selectError = createSelector(
+  baseState,
+  ({ error }) => error
+)

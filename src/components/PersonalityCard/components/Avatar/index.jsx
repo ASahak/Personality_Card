@@ -5,6 +5,7 @@ import {selectUser} from 'store/selectors';
 
 const AvatarContainer = () => {
   const user = useSelector(selectUser);
+
   const [isReady, setIsReady] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
 

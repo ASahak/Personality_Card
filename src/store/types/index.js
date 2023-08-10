@@ -1,7 +1,11 @@
-export default {
+const constants = {
+  RESET_STATE: 'RESET_STATE',
+  SET_ERROR: 'SET_ERROR',
   TOGGLE_APP_LOADING: 'TOGGLE_APP_LOADING',
   FETCH_USER_DATA: 'FETCH_USER_DATA',
   SET_USER: 'SET_USER',
   SET_BRANDS: 'SET_BRANDS',
   SET_DESCRIPTION: 'SET_DESCRIPTION',
 }
+
+export default constants;
