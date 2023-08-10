@@ -6,27 +6,27 @@ const DetailsView = ({ data: { username, date_of_birth, phone_number, email, sub
   <ul className="mt-6 flex flex-col gap-2">
     <li className="grid sm:grid-cols-[280px_auto] grid-cols-1 text-2xl md:text-3xl xl:text-[36px] leading-8 md:leading-9 xl:leading-[60px]">
       <strong className="text-gray">Username:</strong>
-      <span className="text-gray break-all">{username}</span>
+      <span className="text-gray break-words">{username}</span>
     </li>
     <li className="grid sm:grid-cols-[280px_auto] grid-cols-1 text-2xl md:text-3xl xl:text-[36px] leading-8 md:leading-9 xl:leading-[60px]">
       <strong className="text-gray">Date of Birth:</strong>
-      <span className="text-gray break-all">{convertDate(date_of_birth)}</span>
+      <span className="text-gray break-words">{convertDate(date_of_birth)}</span>
     </li>
     <li className="grid sm:grid-cols-[280px_auto] grid-cols-1 text-2xl md:text-3xl xl:text-[36px] leading-8 md:leading-9 xl:leading-[60px]">
       <strong className="text-gray">Phone:</strong>
-      <span className="text-gray break-all">{phone_number}</span>
+      <span className="text-gray break-words">{phone_number}</span>
     </li>
     <li className="grid sm:grid-cols-[280px_auto] grid-cols-1 text-2xl md:text-3xl xl:text-[36px] leading-8 md:leading-9 xl:leading-[60px]">
       <strong className="text-gray">Email:</strong>
-      <span className="text-gray break-all">{email}</span>
+      <span className="text-gray break-words">{email}</span>
     </li>
     <li className="grid sm:grid-cols-[280px_auto] grid-cols-1 text-2xl md:text-3xl xl:text-[36px] leading-8 md:leading-9 xl:leading-[60px]">
       <strong className="text-gray">Subscription:</strong>
-      <span className="text-gray break-all">{plan}</span>
+      <span className="text-gray break-words">{plan}</span>
     </li>
     <li className="grid sm:grid-cols-[280px_auto] grid-cols-1 text-2xl md:text-3xl xl:text-[36px] leading-8 md:leading-9 xl:leading-[60px]">
       <strong className="text-gray">Location:</strong>
-      <span className="text-gray break-all">{generateAddress(address)}</span>
+      <span className="text-gray break-words">{generateAddress(address)}</span>
     </li>
   </ul>
 </div>);
