@@ -2,7 +2,7 @@ import { call, put, all, takeEvery } from 'redux-saga/effects';
 import * as API from 'services/api';
 import Types from '../types';
 import Lorem from 'utils/loremIpsumInstance';
-import {USER_DESCRIPTION_PARAGRAPHS_COUNT} from 'utils/constants';
+import {USER_DESCRIPTION_WORDS_COUNT} from 'utils/constants';
 
 function * fetchUserDetails () {
   try {
@@ -24,7 +24,7 @@ function * fetchUserBrands () {
 
 function * fetchUserDescription () {
   try {
-    const text= Lorem.generateParagraphs(USER_DESCRIPTION_PARAGRAPHS_COUNT);
+    const text= Lorem.generateWords(USER_DESCRIPTION_WORDS_COUNT);
     yield put({ type: Types.SET_DESCRIPTION, payload: text });
   } catch (error) {
     throw new Error(error);

@@ -3,6 +3,18 @@ self.addEventListener('fetch', event => {
   event.respondWith(cachedResponse(event.request));
 });
 
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keyList) =>
+      Promise.all(
+        keyList.map((key) => {
+          return caches.delete(key);
+        }),
+      ),
+    ),
+  );
+});
+
 async function cachedResponse(request) {
 // Open the cache named 'my-cache'
   const cache = await caches.open('my-cache');

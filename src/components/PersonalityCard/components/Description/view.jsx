@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const DescriptionView = ({ text }) => (
-  <p className="text-gray leading-[60px] mt-12 text-4xl">{text}</p>
+  <p className="md:text-[3vw] xl:text-[32px] text-2xl text-gray lg:leading-[50px] leading-10 mt-12">{text}</p>
 );
 
 DescriptionView.displayName = 'DescriptionView';

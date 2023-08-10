@@ -1,4 +1,4 @@
-export const USER_DESCRIPTION_PARAGRAPHS_COUNT = 1;
+export const USER_DESCRIPTION_WORDS_COUNT = 25;
 
 export const BRANDS_COUNT = 10;
 
